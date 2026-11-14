@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA | Електроніка нового покоління</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#">AURA<span>.</span></a>
+    <nav>
+      <a href="#catalog">Каталог</a>
+      <a href="#benefits">Переваги</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+    <div class="header-actions">
+      <input id="searchInput" class="search" type="search" placeholder="Пошук товарів...">
+      <select id="currencySelect" aria-label="Валюта">
+        <option value="UAH">₴ UAH</option><option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option><option value="PLN">zł PLN</option>
+      </select>
+      <button id="themeButton" class="icon-button" aria-label="Змінити тему">☾</button>
+      <button id="cartButton" class="cart-button">Кошик <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ФЛАГМАНСЬКА СЕРІЯ · 2026</p>
+        <h1>Технології,<br><span>що надихають.</span></h1>
+        <p class="hero-description">Відкрийте для себе нове покоління електроніки. Сучасний дизайн, висока продуктивність і лише перевірені пристрої.</p>
+        <a class="primary-button" href="#catalog">Переглянути каталог →</a>
+        <div class="hero-notes"><span>✓ Офіційна гарантія</span><span>✓ Швидка доставка</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-glow"></div>
+        <div class="phone-art"><div class="phone-camera"></div><div class="phone-screen">AURA</div></div>
+        <div class="art-caption">TITAN PHONE 16 PRO <small>Створений для майбутнього</small></div>
+      </div>
+    </section>
+
+    <section class="catalog section" id="catalog">
+      <div class="section-heading">
+        <div><p class="eyebrow">НАШ ВИБІР</p><h2>Популярні товари</h2></div>
+        <p class="muted">Знайдіть пристрій для своїх щоденних завдань</p>
+      </div>
+      <div class="category-list" id="categoryList"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p id="emptyMessage" class="empty hidden">За вашим запитом нічого не знайдено.</p>
+    </section>
+
+    <section class="benefits section" id="benefits">
+      <div class="benefit"><span class="benefit-icon">⌁</span><h3>Швидка доставка</h3><p>На замовлення від 3 000 ₴</p></div>
+      <div class="benefit"><span class="benefit-icon">♢</span><h3>Офіційна гарантія</h3><p>До 24 місяців обслуговування</p></div>
+      <div class="benefit"><span class="benefit-icon">↺</span><h3>Повернення 14 днів</h3><p>Простий обмін або повернення</p></div>
+      <div class="benefit"><span class="benefit-icon">♡</span><h3>Підтримка</h3><p>Допоможемо з вибором пристрою</p></div>
+    </section>
+  </main>
+
+  <footer id="contacts" class="footer">
+    <div><a class="logo" href="#">AURA<span>.</span></a><p>Магазин сучасної електроніки та розумних гаджетів.</p></div>
+    <div><h4>Контакти</h4><p>1 111 111 111</p><p>example@gmail.com</p><p>Україна</p></div>
+    <div><h4>Інформація</h4><p><a href="#benefits">Доставка й оплата</a></p><p><a href="#benefits">Гарантія та повернення</a></p></div>
+  </footer>
+
+  <div class="overlay hidden" id="overlay">
+    <section class="dialog cart-dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <button class="close-button" id="closeDialog" aria-label="Закрити">×</button>
+      <h2 id="dialogTitle">Ваш кошик</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total"><span>Разом</span><strong id="cartTotal">0 ₴</strong></div>
+      <button class="primary-button full-button" id="checkoutButton">Оформити замовлення</button>
+    </section>
+  </div>
+  <div class="overlay hidden" id="productOverlay">
+    <section class="dialog product-dialog">
+      <button class="close-button" id="closeProductDialog">×</button>
+      <div id="productDetails"></div>
+    </section>
+  </div>
+  <div class="toast hidden" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
